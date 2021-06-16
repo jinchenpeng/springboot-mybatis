@@ -1,0 +1,26 @@
+server:
+  poet: 2021
+  servlet:
+    encoding:
+      force: true
+      charset: UTF-8
+spring:
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 200MB
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://192.168.10.187:3306/user?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+      username: root
+      password: 123456
+      type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  #扫描classpath中mapper目录下的映射配置文件
+  mapper-locations: classpath:mapper/xml/*.xml
+  type-aliases-package: com.example.demo.entity
+logging:
+  file:
+    name: log/log.log
+  level:
+    root: info
